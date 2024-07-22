@@ -5,5 +5,8 @@
   "repository": "https://github.com/igoogolx/proxy-uri-parser.git",
   "author": "igoogolx <27353191+igoogolx@users.noreply.github.com>",
   "license": "GPL",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  }
 }
