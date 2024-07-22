@@ -9,6 +9,13 @@
 
     "strict": true,                                      /* Enable all strict type-checking options. */
 
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */,
+    "outDir": "dist",
+    // Generate d.ts files
+    "declaration": true,
+    // This compiler run should
+    // only output d.ts files
+    "emitDeclarationOnly": true
+  },
+  "include": ["src/**/*"],
 }
