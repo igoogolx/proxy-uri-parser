@@ -13,9 +13,6 @@
     "outDir": "dist",
     // Generate d.ts files
     "declaration": true,
-    // This compiler run should
-    // only output d.ts files
-    "emitDeclarationOnly": true
   },
   "include": ["src/**/*"],
 }

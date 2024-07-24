@@ -1,4 +1,4 @@
-interface WsOptions {
+export interface WsOptions {
   path?: string;
   headers?: {
     [key: string]: string;
@@ -9,7 +9,7 @@ interface WsOptions {
   "v2ray-http-upgrade-fast-open"?: boolean;
 }
 
-interface HttpOptions {
+export interface HttpOptions {
   method?: string;
   path?: string[];
   headers?: {
@@ -17,20 +17,20 @@ interface HttpOptions {
   };
 }
 
-interface H2Options {
+export interface H2Options {
   path?: string;
   host?: string;
 }
 
-interface GrpcOptions {
+export interface GrpcOptions {
   "grpc-service-name"?: string;
 }
 
-interface RealityOptions {
+export interface RealityOptions {
   "public-key"?: string;
   "short-id"?: string;
 }
-type ClientFingerprint =
+export type ClientFingerprint =
   | "chrome"
   | "firefox"
   | "safari"
@@ -40,8 +40,8 @@ type ClientFingerprint =
   | "360"
   | "qq"
   | "random";
-type NetworkType = "ws" | "http" | "h2" | "grpc" | "tcp";
-type CipherType =
+export type NetworkType = "ws" | "http" | "h2" | "grpc" | "tcp";
+export type CipherType =
   | "none"
   | "auto"
   | "dummy"
@@ -83,17 +83,17 @@ interface IProxyBaseConfig {
   "dialer-proxy"?: string;
 }
 // direct
-interface IProxyDirectConfig extends IProxyBaseConfig {
+export interface IProxyDirectConfig extends IProxyBaseConfig {
   name: string;
   type: "direct";
 }
 // dns
-interface IProxyDnsConfig extends IProxyBaseConfig {
+export interface IProxyDnsConfig extends IProxyBaseConfig {
   name: string;
   type: "dns";
 }
 // http
-interface IProxyHttpConfig extends IProxyBaseConfig {
+export interface IProxyHttpConfig extends IProxyBaseConfig {
   name: string;
   type: "http";
   server?: string;
@@ -109,7 +109,7 @@ interface IProxyHttpConfig extends IProxyBaseConfig {
   };
 }
 // socks5
-interface IProxySocks5Config extends IProxyBaseConfig {
+export interface IProxySocks5Config extends IProxyBaseConfig {
   name: string;
   type: "socks5";
   server?: string;
@@ -122,7 +122,7 @@ interface IProxySocks5Config extends IProxyBaseConfig {
   fingerprint?: string;
 }
 // ssh
-interface IProxySshConfig extends IProxyBaseConfig {
+export interface IProxySshConfig extends IProxyBaseConfig {
   name: string;
   type: "ssh";
   server?: string;
@@ -135,7 +135,7 @@ interface IProxySshConfig extends IProxyBaseConfig {
   "host-key-algorithms"?: string;
 }
 // trojan
-interface IProxyTrojanConfig extends IProxyBaseConfig {
+export interface IProxyTrojanConfig extends IProxyBaseConfig {
   name: string;
   type: "trojan";
   server?: string;
@@ -158,7 +158,7 @@ interface IProxyTrojanConfig extends IProxyBaseConfig {
   "client-fingerprint"?: ClientFingerprint;
 }
 // tuic
-interface IProxyTuicConfig extends IProxyBaseConfig {
+export interface IProxyTuicConfig extends IProxyBaseConfig {
   name: string;
   type: "tuic";
   server?: string;
@@ -191,7 +191,7 @@ interface IProxyTuicConfig extends IProxyBaseConfig {
   "udp-over-stream-version"?: number;
 }
 // vless
-interface IProxyVlessConfig extends IProxyBaseConfig {
+export interface IProxyVlessConfig extends IProxyBaseConfig {
   name: string;
   type: "vless";
   server?: string;
@@ -220,7 +220,7 @@ interface IProxyVlessConfig extends IProxyBaseConfig {
   "client-fingerprint"?: ClientFingerprint;
 }
 // vmess
-interface IProxyVmessConfig extends IProxyBaseConfig {
+export interface IProxyVmessConfig extends IProxyBaseConfig {
   name: string;
   type: "vmess";
   server?: string;
@@ -247,7 +247,7 @@ interface IProxyVmessConfig extends IProxyBaseConfig {
   "authenticated-length"?: boolean;
   "client-fingerprint"?: ClientFingerprint;
 }
-interface WireGuardPeerOptions {
+export interface WireGuardPeerOptions {
   server?: string;
   port?: number;
   "public-key"?: string;
@@ -256,7 +256,7 @@ interface WireGuardPeerOptions {
   "allowed-ips"?: string[];
 }
 // wireguard
-interface IProxyWireguardConfig extends IProxyBaseConfig, WireGuardPeerOptions {
+export interface IProxyWireguardConfig extends IProxyBaseConfig, WireGuardPeerOptions {
   name: string;
   type: "wireguard";
   ip?: string;
@@ -272,7 +272,7 @@ interface IProxyWireguardConfig extends IProxyBaseConfig, WireGuardPeerOptions {
   "refresh-server-ip-interval"?: number;
 }
 // hysteria
-interface IProxyHysteriaConfig extends IProxyBaseConfig {
+export interface IProxyHysteriaConfig extends IProxyBaseConfig {
   name: string;
   type: "hysteria";
   server?: string;
@@ -300,7 +300,7 @@ interface IProxyHysteriaConfig extends IProxyBaseConfig {
   "hop-interval"?: number;
 }
 // hysteria2
-interface IProxyHysteria2Config extends IProxyBaseConfig {
+export interface IProxyHysteria2Config extends IProxyBaseConfig {
   name: string;
   type: "hysteria2";
   server?: string;
@@ -324,7 +324,7 @@ interface IProxyHysteria2Config extends IProxyBaseConfig {
   "udp-mtu"?: number;
 }
 // shadowsocks
-interface IProxyShadowsocksConfig extends IProxyBaseConfig {
+export interface IProxyShadowsocksConfig extends IProxyBaseConfig {
   name: string;
   type: "ss";
   server?: string;
@@ -356,7 +356,7 @@ interface IProxyShadowsocksConfig extends IProxyBaseConfig {
   "client-fingerprint"?: ClientFingerprint;
 }
 // shadowsocksR
-interface IProxyshadowsocksRConfig extends IProxyBaseConfig {
+export interface IProxyshadowsocksRConfig extends IProxyBaseConfig {
   name: string;
   type: "ssr";
   server?: string;
@@ -370,7 +370,7 @@ interface IProxyshadowsocksRConfig extends IProxyBaseConfig {
   udp?: boolean;
 }
 // sing-mux
-interface IProxySmuxConfig {
+export interface IProxySmuxConfig {
   smux?: {
     enabled?: boolean;
     protocol?: "smux" | "yamux" | "h2mux";
@@ -388,7 +388,7 @@ interface IProxySmuxConfig {
   };
 }
 // snell
-interface IProxySnellConfig extends IProxyBaseConfig {
+export interface IProxySnellConfig extends IProxyBaseConfig {
   name: string;
   type: "snell";
   server?: string;
@@ -399,7 +399,7 @@ interface IProxySnellConfig extends IProxyBaseConfig {
   "obfs-opts"?: {};
 }
 
-interface IProxyConfig
+export interface IProxyConfig
   extends IProxyBaseConfig,
     Omit<IProxyDirectConfig, "type">,
       Omit<IProxyDnsConfig, "type">,

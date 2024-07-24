@@ -1,7 +1,8 @@
 {
   "name": "proxy-uri-parser",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/igoogolx/proxy-uri-parser.git",
   "author": "igoogolx <27353191+igoogolx@users.noreply.github.com>",
   "license": "GPL",

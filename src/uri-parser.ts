@@ -1,3 +1,22 @@
+import {
+  ClientFingerprint,
+  GrpcOptions,
+  IProxyConfig,
+  IProxyHttpConfig,
+  IProxyHysteria2Config,
+  IProxyHysteriaConfig,
+  IProxyShadowsocksConfig,
+  IProxyshadowsocksRConfig,
+  IProxySocks5Config,
+  IProxyTrojanConfig,
+  IProxyTuicConfig,
+  IProxyVlessConfig,
+  IProxyVmessConfig,
+  IProxyWireguardConfig,
+  NetworkType,
+  WsOptions
+} from "./types";
+
 export default function parseUri(uri: string): IProxyConfig {
   const head = uri.split("://")[0];
   switch (head) {
