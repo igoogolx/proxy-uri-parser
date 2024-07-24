@@ -398,24 +398,25 @@ interface IProxySnellConfig extends IProxyBaseConfig {
   version?: number;
   "obfs-opts"?: {};
 }
+
 interface IProxyConfig
   extends IProxyBaseConfig,
-    IProxyDirectConfig,
-    IProxyDnsConfig,
-    IProxyHttpConfig,
-    IProxySocks5Config,
-    IProxySshConfig,
-    IProxyTrojanConfig,
-    IProxyTuicConfig,
-    IProxyVlessConfig,
-    IProxyVmessConfig,
-    IProxyWireguardConfig,
-    IProxyHysteriaConfig,
-    IProxyHysteria2Config,
-    IProxyShadowsocksConfig,
-    IProxyshadowsocksRConfig,
-    IProxySmuxConfig,
-    IProxySnellConfig {
+    Omit<IProxyDirectConfig, "type">,
+      Omit<IProxyDnsConfig, "type">,
+      Omit<IProxyHttpConfig, "type">,
+      Omit<IProxySocks5Config, "type">,
+      Omit<IProxySshConfig, "type">,
+      Omit<IProxyTrojanConfig, "type">,
+      Omit<IProxyTuicConfig, "type">,
+      Omit<IProxyVlessConfig, "type">,
+      Omit<IProxyVmessConfig, "type">,
+      Omit<IProxyWireguardConfig, "type">,
+      Omit<IProxyHysteriaConfig, "type">,
+      Omit<IProxyHysteria2Config, "type">,
+      Omit<IProxyShadowsocksConfig, "type">,
+      Omit<IProxyshadowsocksRConfig, "type">,
+      Omit<IProxySmuxConfig, "type">,
+      Omit<IProxySnellConfig, "type"> {
   type:
     | "ss"
     | "ssr"
