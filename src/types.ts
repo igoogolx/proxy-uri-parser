@@ -399,6 +399,29 @@ export interface IProxySnellConfig extends IProxyBaseConfig {
   "obfs-opts"?: {};
 }
 
+export interface IProxyAnyTLSConfig extends IProxyBaseConfig {
+  name: string
+  type: 'anytls'
+  server?: string
+  port?: number
+  password?: string
+  alpn?: string[]
+  sni?: string
+  'client-fingerprint'?: ClientFingerprint
+  'skip-cert-verify'?: boolean
+  fingerprint?: string
+  certificate?: string
+  'private-key'?: string
+  'ech-opts'?: {
+    enable?: boolean
+    config?: string
+  }
+  udp?: boolean
+  'idle-session-check-interval'?: number
+  'idle-session-timeout'?: number
+  'min-idle-session'?: number
+}
+
 export interface IProxyConfig
   extends IProxyBaseConfig,
     Omit<IProxyDirectConfig, "type">,
@@ -416,7 +439,8 @@ export interface IProxyConfig
       Omit<IProxyShadowsocksConfig, "type">,
       Omit<IProxyshadowsocksRConfig, "type">,
       Omit<IProxySmuxConfig, "type">,
-      Omit<IProxySnellConfig, "type"> {
+      Omit<IProxySnellConfig, "type">,
+      Omit<IProxyAnyTLSConfig, "type"> {
   type:
     | "ss"
     | "ssr"
@@ -432,6 +456,8 @@ export interface IProxyConfig
     | "ssh"
     | "socks5"
     | "vmess"
-    | "vless";
+    | "vless"
+    | "anytls"
+  ;
 }
 
